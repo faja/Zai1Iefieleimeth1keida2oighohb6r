@@ -13,6 +13,7 @@ nomad job status ${JOB_NAME}      # get job status, and some useful info, eg: co
 nomad node status ${NODE_ID}      # get node info
 nomad namespace list              # list namespaces
 
+nomad alloc status <alloc_id>                        # get alloc status
 nomad alloc logs <alloc_id> [task] -f -n 100         # get alloc/task logs STDOUT
 nomad alloc logs <alloc_id> [task] -f -n 100 -stderr # get alloc/task logs STDERR
 

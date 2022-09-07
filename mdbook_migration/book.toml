@@ -1,0 +1,13 @@
+[book]
+authors = ["faja"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Manuals"
+
+[output.html]
+default-theme = "rust"
+
+[output.html.fold]
+enable = true
+level = 0

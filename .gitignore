@@ -1,0 +1,8 @@
+# book stuff
+mdbook_test
+mdbook_migration/book
+
+# terraform
+.terraform
+terraform.tfstate
+terraform.tfstate.backup

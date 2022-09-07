@@ -1,9 +1,3 @@
-#
-
-- [cheatsheet](./cheatsheet.md)
-
-#
-
 - [00. basics](./00.basics.md)
 - [01. agent configuration](./01.agent.config.md)
 - [02. job spec](./02.job.spec.md)
