@@ -1,6 +1,5 @@
-# book stuff
-mdbook_test
-mdbook_migration/book
+# book
+book/
 
 # terraform
 .terraform
