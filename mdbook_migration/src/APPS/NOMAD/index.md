@@ -1,6 +1,4 @@
-# NOMAD
-
-#
+# nomad
 
 - [cheatsheet](./cheatsheet.md)
 
