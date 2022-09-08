@@ -2,6 +2,7 @@
 
 - [APPS](./APPS/index.md)
     - [atlantis](./APPS/ATLANTIS/index.md)
+    - [cadvisor](./APPS/CADVISOR/index.md)
     - [nomad](./APPS/NOMAD/index.md)
         - [cheatsheet](./APPS/NOMAD/cheatsheet.md)
         - [main docs](./APPS/NOMAD/MAIN_DOCS/index.md)
