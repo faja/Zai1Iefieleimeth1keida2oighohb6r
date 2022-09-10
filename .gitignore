@@ -5,3 +5,6 @@ book/
 .terraform
 terraform.tfstate
 terraform.tfstate.backup
+
+# grafana jsonnet libs
+vendor

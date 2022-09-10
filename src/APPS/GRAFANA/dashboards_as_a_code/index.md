@@ -34,10 +34,12 @@
 - import json dashboard to grafana, how? it's up to you, but terraform is a good choice
 
 # next steps
-- [01. local development environment](./01.local.dev.env.md)
+- [quick start example](./quick_start/index.md)
+- [full send example](./full_send/index.md)
 
 # links
-- https://github.com/grafana/grafonnet-lib
-- https://grafana.github.io/grafonnet-lib/
-- https://github.com/google/go-jsonnet
-- https://github.com/jsonnet-bundler/jsonnet-bundler
+- [https://github.com/grafana/grafonnet-lib](https://github.com/grafana/grafonnet-lib)
+- [https://grafana.github.io/grafonnet-lib/](https://grafana.github.io/grafonnet-lib/)
+- [https://github.com/google/go-jsonnet](https://github.com/google/go-jsonnet)
+- [https://github.com/jsonnet-bundler/jsonnet-bundler](https://github.com/jsonnet-bundler/jsonnet-bundler)
+- [https://github.com/adamwg/grafana-dashboards](https://github.com/adamwg/grafana-dashboards)
