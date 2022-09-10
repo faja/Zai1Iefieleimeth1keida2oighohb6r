@@ -19,6 +19,7 @@
         - [playground](./APPS/TERRAFORM/playground/index.md)
             - [path variable](./APPS/TERRAFORM/playground/00.path.variable/index.md)
             - [yaml values](./APPS/TERRAFORM/playground/01.yaml.values.file/index.md)
+            - [fileset function](./APPS/TERRAFORM/playground/02.fileset.function/index.md)
 
 
 ---
