@@ -15,6 +15,11 @@
             - [02. job spec](./APPS/NOMAD/MAIN_DOCS/02.job.spec.md)
         - [terraform](./APPS/NOMAD/TERRAFORM/index.md)
             - [very first example job](./APPS/NOMAD/TERRAFORM/00_JOB/index.md)
+    - [terraform](./APPS/TERRAFORM/index.md)
+        - [playground](./APPS/TERRAFORM/playground/index.md)
+            - [path variable](./APPS/TERRAFORM/playground/00.path.variable/index.md)
+            - [yaml values](./APPS/TERRAFORM/playground/01.yaml.values.file/index.md)
+
 
 ---
 
