@@ -36,6 +36,7 @@
 # next steps
 - [quick start example](./quick_start/index.md)
 - [full send example](./full_send/index.md)
+- [production (one of my projects)](./production/index.md)
 
 # links
 - [https://github.com/grafana/grafonnet-lib](https://github.com/grafana/grafonnet-lib)

@@ -7,6 +7,7 @@
         - [dashboards as a code](./APPS/GRAFANA/dashboards_as_a_code/index.md)
             - [quick start example](./APPS/GRAFANA/dashboards_as_a_code/quick_start/index.md)
             - [full send example](./APPS/GRAFANA/dashboards_as_a_code/full_send/index.md)
+            - [production example](./APPS/GRAFANA/dashboards_as_a_code/production/index.md)
     - [nomad](./APPS/NOMAD/index.md)
         - [cheatsheet](./APPS/NOMAD/cheatsheet.md)
         - [main docs](./APPS/NOMAD/MAIN_DOCS/index.md)
