@@ -34,4 +34,6 @@
 
 ---
 
-- [LINUX INTERNALS](./LINUX/index.md)
+- [LINUX INTERNALS](./LINUX_INTERNALS/index.md)
+    - [BPF](./LINUX_INTERNALS/BPF/index.md)
+        - [intro](./LINUX_INTERNALS/BPF/intro.md)

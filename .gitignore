@@ -1,6 +1,9 @@
 # book
 book/
 
+# mac blah
+.DS_Store
+
 # terraform
 .terraform
 terraform.tfstate
