@@ -12,6 +12,7 @@
                 - [dashboard](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/dashboard.md)
                 - [templates aka variables](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/templates.md)
                 - [panel stat](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_stat.md)
+                - [panel timeseries](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_timeseries.md)
     - [nomad](./APPS/NOMAD/index.md)
         - [cheatsheet](./APPS/NOMAD/cheatsheet.md)
         - [main docs](./APPS/NOMAD/MAIN_DOCS/index.md)

@@ -1,3 +1,4 @@
 - [dashboard](./dashboard.md)
 - [templates aka variables](./templates.md)
 - [panel stat](./panel_stat.md)
+- [panel timeseries](./panel_timeseries.md)
