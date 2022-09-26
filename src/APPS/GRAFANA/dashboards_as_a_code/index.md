@@ -38,6 +38,9 @@
 - [full send example](./full_send/index.md)
 - [production (one of my projects)](./production/index.md)
 
+# jsonnet snippets
+- [jsonnet snippets](./jsonnet_snippets/index.md)
+
 # links
 - [https://github.com/grafana/grafonnet-lib](https://github.com/grafana/grafonnet-lib)
 - [https://grafana.github.io/grafonnet-lib/](https://grafana.github.io/grafonnet-lib/)
