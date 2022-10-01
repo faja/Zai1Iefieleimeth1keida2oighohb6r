@@ -1,9 +1,9 @@
 terraform {
-  required_version = "~> 1.2.0"
+  required_version = "~> 1.3.0"
   required_providers {
     grafana = {
       source = "grafana/grafana"
-      version = "~> 1.28.0"
+      version = "~> 1.29.0"
     }
   }
 }

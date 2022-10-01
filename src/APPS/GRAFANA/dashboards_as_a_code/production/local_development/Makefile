@@ -5,10 +5,11 @@ all: help
 
 help:
 	@echo "available commands:"
-	@echo "  - make dev           - start local development environment"
-	@echo "  - make clean         - removes local development environment"
-	@echo "  - make dev_grafana   - start grafana service only"
-	@echo "  - make dev_jsonnet   - start jsonnet service only"
+	@echo "  - make dev             - start local development environment"
+	@echo "  - make clean           - removes local development environment"
+	@echo "  - make dev_grafana     - start grafana service only"
+	@echo "  - make dev_jsonnet     - start jsonnet service only"
+	@echo "  - make dev_prometheus  - start prometheus service only"
 
 dev: clean
 	docker compose up --build --remove-orphans --exit-code-from grafana grafana jsonnet

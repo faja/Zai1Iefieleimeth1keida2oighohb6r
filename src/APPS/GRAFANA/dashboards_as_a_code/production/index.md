@@ -1,39 +1,37 @@
 # directory structure
-```
-mkdir -p dashboards/dashboards_json/Folder{1,2}
-mkdir -p dashboards/dashboards_jsonnet/Folder{1,2}
-mkdir -p dashboards/local_development
-```
+- `dashboards_json/` - contains redndered `json` dashboards
+- `dashboards_jsonnet/` - contains `jsonnet` dashboards
+- `local_development/` - contains stuff for local development: compose, terraform, etc...
 
-# files
+# files in local_development
 - `compose.yaml`
 ```
-{{#include compose.yaml}}
+{{#include local_development/compose.yaml}}
 ```
 
 - `Dockerfile`
 ```
-{{#include Dockerfile}}
+{{#include local_development/Dockerfile}}
 ```
 
 - `entrypoint.sh`
 ```
-{{#include entrypoint.sh}}
+{{#include local_development/entrypoint.sh}}
 ```
 
 - `grafana.ini`
 ```
-{{#include grafana.ini}}
+{{#include local_development/grafana.ini}}
 ```
 
 - `main.tf`
 ```
-{{#include main.tf}}
+{{#include local_development/main.tf}}
 ```
 
 - `modules/grafana_dashboards/main.tf`
 ```
-{{#include modules/grafana_dashboards/main.tf}}
+{{#include local_development/modules/grafana_dashboards/main.tf}}
 ```
 
 # howto remote prometheus data source

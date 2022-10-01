@@ -1,9 +1,9 @@
 terraform {
-  required_version = "~> 1.2.0"
+  required_version = "~> 1.3.0"
   required_providers {
     grafana = {
       source = "grafana/grafana"
-      version = "= 1.28.2"
+      version = "= 1.29.0"
     }
   }
 }
@@ -18,13 +18,8 @@ provider "grafana" {
 # the one, you are working on, this will speed up terraform apply process
 locals {
   dashboards = {
-    #  Folder1 = [
-    #    "Dashboard1",
-    #  ]
-
-      Folder2 = [
-         "Dashboard1"
-    #    "Dashboard2",
+      System = [
+         "Prometheus"
       ]
   }
 }
