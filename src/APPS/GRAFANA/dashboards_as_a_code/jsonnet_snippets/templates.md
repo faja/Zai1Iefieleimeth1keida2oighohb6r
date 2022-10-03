@@ -1,22 +1,22 @@
 - datasource `prometheus`
 ```
-.addTemplate(
-  grafana.template.datasource(
-    'PROMETHEUS_DS',     // name
-    'prometheus',        // query
-    'prometheus',        // current
-    hide=true,           // ''      - disables hiding at all, everything is displayed
-                         // 'label' - hide the name of the variable, and the drop down is displayed
-                         // any other value - hides everything
-    //regex='/prometheus/',
-  )
-)
+local varPrometheusDS = grafana.template.datasource(
+  'PROMETHEUS_DS',     // name
+  'prometheus',        // query
+  'prometheus',        // current
+  hide=true,           // ''      - disables hiding at all, everything is displayed
+                       // 'label' - hide the name of the variable, and the drop down is displayed
+                       // any other value - hides everything
+  //regex='/prometheus/',
+);
+
+dashboard
+.addTemplate(varPrometheusDS)
 ```
 
 - datasource `loki`
 ```
-.addTemplate(
-  grafana.template.datasource(
+local varLokiDS = grafana.template.datasource(
     'LOKI_DS',           // name
     'loki',              // query
     'loki',              // current
@@ -24,18 +24,39 @@
                          // 'label' - hide the name of the variable, and the drop down is displayed
                          // any other value - hides everything
     //regex='/loki/',
-  )
-)
+);
+
+dashboard
+.addTemplate(varLokiDS)
 ```
 
 - constant or custom text, eg: job name
 ```
-.addTemplate(
-  grafana.template.custom(
-    'job',         // name
-    'prometheus',  // query
-    'prometheus',  // current
-    hide=true,
-  )
-)
+local varJob = grafana.template.custom(
+  'job',         // name
+  'prometheus',  // query
+  'prometheus',  // current
+  hide=true,
+);
+
+dashboard
+.addTemplate(varJob)
+```
+
+- prometheus label_values
+```
+local varCluster = std.mergePatch(
+  grafana.template.new(
+    'cluster',                                         // name
+    {"type": "prometheus", "uid": "${PROMETHEUS_DS}"}, // datasource
+    "label_values(rabbitmq_version_info, cluster)",    // query
+  ),
+  {
+    "definition": "label_values(rabbitmq_version_info, cluster)"  // optional
+  }
+);
+
+
+dashboard
+.addTemplate(varCluster)
 ```
