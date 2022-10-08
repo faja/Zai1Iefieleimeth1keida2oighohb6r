@@ -13,6 +13,7 @@
                 - [rows and dashboard layout](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/rows.md)
                 - [panel stat](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_stat.md)
                 - [panel timeseries](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_timeseries.md)
+                - [panel gauge](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_gauge.md)
                 - [panel table](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_table.md)
                 - [panel text](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_text.md)
                 - [panel logs](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_logs.md)

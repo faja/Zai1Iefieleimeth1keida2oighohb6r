@@ -1,3 +1,26 @@
+- simplest stat ever: single valie, instant query, color value
+```
+local panelStatefulsetsStatefulsets = {
+  // type, title and description
+  "type": "stat",
+  "title": "Statefulsets",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "count(kube_statefulset_created{namespace=~\"$namespace\"})",
+      "instant": true
+    }
+  ]
+};
+```
+
 - copy paste example, text from lables
 ```
 local panelVersion = {
@@ -121,5 +144,55 @@ local panelStorageSize = {
       ]
     }
   }
+};
+```
+
+- single stat, avare value across all metrics
+```
+// INFO
+// the way to do it is:
+//   - use transformation reduce (calculation does not matter)
+//   - use options.reduceOptions.calcs: mean (this calculates avarerage)
+
+local panelJobsAvgDuration = {
+  // type, title and description
+  "type": "stat",
+  "title": "Avg duration",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "kube_job_status_completion_time{namespace=~\"$namespace\"} - kube_job_status_start_time{namespace=~\"$namespace\"}"
+    }
+  ],
+
+  // filedConfig
+  "fieldConfig": {
+    "defaults": {
+      "unit": "s"
+    }
+  },
+
+  // options
+  "options": {
+    "reduceOptions": {
+      "calcs": [
+        "mean"
+      ]
+    }
+  },
+
+  // transformations
+  "transformations": [
+    {
+      "id": "reduce"
+    }
+  ]
 };
 ```

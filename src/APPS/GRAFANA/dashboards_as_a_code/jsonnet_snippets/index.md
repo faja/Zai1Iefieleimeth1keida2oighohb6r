@@ -12,6 +12,7 @@ With such approach json is pretty small, and it is easy to change etc...
 
 - [panel stat](./panel_stat.md)
 - [panel timeseries](./panel_timeseries.md)
+- [panel gauge](./panel_gauge.md)
 - [panel table](./panel_table.md)
 - [panel text](./panel_text.md)
 - [panel logs](./panel_logs.md)
