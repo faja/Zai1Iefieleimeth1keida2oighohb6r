@@ -45,4 +45,4 @@
 
 - [LINUX INTERNALS](./LINUX_INTERNALS/index.md)
     - [BPF](./LINUX_INTERNALS/BPF/index.md)
-        - [intro](./LINUX_INTERNALS/BPF/intro.md)
+        - [chapter 1 - introduction](./LINUX_INTERNALS/BPF/ch1_introduction/index.md)

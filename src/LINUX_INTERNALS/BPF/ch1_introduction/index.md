@@ -11,7 +11,7 @@
 - `bpftrace` - high-level language for developing BPF tools - [https://github.com/iovisor/bpftrace](https://github.com/iovisor/bpftrace)
 
 # BPF ilustrated
-![](./images/bpf_001.jpg)
+![](../images/bpf_001.jpg)
 
 # Instrumentation
 - Dynamic instrumentation
@@ -21,7 +21,7 @@
     - tracepoints
     - USDT (user-level statically defined tracing)
 
-![](./images/bpf_002.jpg)
+![](../images/bpf_002.jpg)
 
 # BPF virtual file system
 - `/sys/fs/bfp`
