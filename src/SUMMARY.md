@@ -37,6 +37,7 @@
 ---
 
 - [COMMANDS](./COMMANDS/index.md)
+    - [argdist](./COMMANDS/ARGDIST/index.md)
     - [biolatency](./COMMANDS/BIOLATENCY/index.md)
     - [biosnoop](./COMMANDS/BIOSNOOP/index.md)
     - [brew](./COMMANDS/BREW/index.md)
@@ -56,9 +57,11 @@
     - [rsync](./COMMANDS/RSYNC/index.md)
     - [runqlat](./COMMANDS/RUNQLAT/index.md)
     - [sar](./COMMANDS/SAR/index.md)
+    - [stackcount](./COMMANDS/STACKCOUNT/index.md)
     - [tcpaccept](./COMMANDS/TCPACCEPT/index.md)
     - [tcpconnect](./COMMANDS/TCPCONNECT/index.md)
     - [tcpretrans](./COMMANDS/TCPRETRANS/index.md)
+    - [trace](./COMMANDS/TRACE/index.md)
     - [uptime](./COMMANDS/UPTIME/index.md)
     - [vmstat](./COMMANDS/VMSTAT/index.md)
 

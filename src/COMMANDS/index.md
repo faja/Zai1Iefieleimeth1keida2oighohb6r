@@ -1,4 +1,5 @@
 # COMMANDS
+- [argdist](./ARGDIST/index.md) `(tags=bpf,bcc,performance)`
 - [biolatency command](./BIOLATENCY/index.md) `(tags=bpf,performance)`
 - [biosnoop command](./BIOSNOOP/index.md) `(tags=bpf,performance)`
 - [brew](./BREW/index.md) `(tags=mac,macos,macosx,package,manager)`
@@ -18,9 +19,11 @@
 - [rsync](./RSYNC/index.md) `(tags=sync,cp,backup)`
 - [runqlat command](./RUNQLAT/index.md) `(tags=bpf,erformance)`
 - [sar](./SAR/index.md) `(tags=performance)`
+- [stackcount](./STACKCOUNT/index.md) `(tags=bpf,bcc,performance)`
 - [tcpaccept command](./TCPACCEPT/index.md) `(tags=bpf,erformance)`
 - [tcpconnect command](./TCPCONNECT/index.md) `(tags=bpf,erformance)`
 - [tcpretrans command](./TCPRETRANS/index.md) `(tags=bpf,erformance)`
+- [trace](./TRACE/index.md) `(tags=bpf,bcc,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`
 
