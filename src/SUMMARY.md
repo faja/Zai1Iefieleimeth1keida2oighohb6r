@@ -77,3 +77,7 @@
         - [chapter 3 - performance_analysis](./LINUX_INTERNALS/BPF/ch3_performance_analysis/index.md)
         - [chapter 4 - bcc](./LINUX_INTERNALS/BPF/ch4_bcc/index.md)
         - [chapter 5 - bpftrace](./LINUX_INTERNALS/BPF/ch5_bpftrace/index.md)
+            - [bpftrace programming](./LINUX_INTERNALS/BPF/ch5_bpftrace/programming.md)
+
+---
+- [AWS](./AWS/index.md)
