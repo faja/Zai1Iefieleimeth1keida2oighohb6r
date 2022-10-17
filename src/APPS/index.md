@@ -5,3 +5,4 @@
 - [grafana](./GRAFANA/index.md)
 - [nomad](./NOMAD/index.md)
 - [terraform](./TERRAFORM/index.md)
+- [vault](./VAULT/index.md)
