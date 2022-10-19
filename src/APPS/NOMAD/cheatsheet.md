@@ -14,8 +14,8 @@ nomad node status ${NODE_ID}      # get node info
 nomad namespace list              # list namespaces
 
 nomad alloc status <alloc_id>                        # get alloc status
-nomad alloc logs <alloc_id> [task] -f -n 100         # get alloc/task logs STDOUT
-nomad alloc logs <alloc_id> [task] -f -n 100 -stderr # get alloc/task logs STDERR
+nomad alloc logs -f -n 100         <alloc_id> [task] # get alloc/task logs STDOUT
+nomad alloc logs -f -n 100 -stderr <alloc_id> [task] # get alloc/task logs STDERR
 
 nomad job init -short             # generate job spec example
 
