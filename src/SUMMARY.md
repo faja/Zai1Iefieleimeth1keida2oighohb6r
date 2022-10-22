@@ -32,7 +32,7 @@
             - [00. path variable](./APPS/TERRAFORM/playground/00.path.variable/index.md)
             - [01. yaml values](./APPS/TERRAFORM/playground/01.yaml.values.file/index.md)
             - [02. fileset function](./APPS/TERRAFORM/playground/02.fileset.function/index.md)
-            - [03. templatefile](./APPS/TERRAFORM/playground/03.templatefile/index.md)
+            - [03. templatefile function](./APPS/TERRAFORM/playground/03.templatefile.function/index.md)
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
 

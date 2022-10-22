@@ -3,7 +3,7 @@
 {{#include main.tf}}
 ```
 
-- `file.tftpl`
+- `filespec.tftpl`
 ```
-{{#include file.tftpl}}
+{{#include filespec.tftpl}}
 ```

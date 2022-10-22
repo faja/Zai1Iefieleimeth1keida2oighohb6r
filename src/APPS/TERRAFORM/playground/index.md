@@ -1,3 +1,4 @@
 - [00. path variable](./00.path.variable/index.md)
 - [01. yaml values](./01.yaml.values.file/index.md)
 - [02 fileset function](./02.fileset.function/index.md)
+- [03 templatefile function](./03.templatefile.function/index.md)
