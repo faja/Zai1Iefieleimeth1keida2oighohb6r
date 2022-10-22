@@ -33,6 +33,7 @@
             - [01. yaml values](./APPS/TERRAFORM/playground/01.yaml.values.file/index.md)
             - [02. fileset function](./APPS/TERRAFORM/playground/02.fileset.function/index.md)
             - [03. templatefile function](./APPS/TERRAFORM/playground/03.templatefile.function/index.md)
+            - [50.modules.explicit.dependencies](./APPS/TERRAFORM/playground/50.modules.explicit.dependencies/index.md)
     - [vault](./APPS/VAULT/index.md)
         - [cheatsheet](./APPS/VAULT/cheatsheet.md)
 
