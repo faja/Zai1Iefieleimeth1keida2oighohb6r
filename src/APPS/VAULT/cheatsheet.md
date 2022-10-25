@@ -7,4 +7,9 @@ export VAULT_TOKEN="..."
 ### kv basics
 vault kv list secret/
 vault kv get -mount=secret config
+
+### policies
+vault
+
+### tokens
 ```
