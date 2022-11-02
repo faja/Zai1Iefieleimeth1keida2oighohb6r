@@ -7,6 +7,8 @@ export VAULT_TOKEN="..."
 ### kv basics
 vault kv list secret/
 vault kv get -mount=secret config
+vault kv put -mount=secret config KEY1=VALUE1 KEY2=VALUE2
+vault kv put -mount=secret config @data.json
 
 ### policies
 vault
