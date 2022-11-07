@@ -11,6 +11,17 @@ terraform {
 
 // provider "merge" {} 
 
+
+/**
+ *
+ * saves `./jobspec.nomad` file with rendered job spec to a local filesystem
+ *
+ */
+variable "save_spec_file" {
+  type    = bool
+  default = true
+}
+
 /**
  * first of all we do have default `values.yaml`
  * the file that contain all default values
@@ -68,6 +79,15 @@ locals {
     yamldecode(data.merge_merge.values.output)
   )
 }
+
 output "jobspec" {
   value = local.jobspec
+}
+
+resource "local_file" "job" {
+  count = var.save_spec_file ? 1 : 0
+
+  filename        = "./jobspec.nomad"
+  content         = local.jobspec
+  file_permission = "0644"
 }
