@@ -33,10 +33,12 @@ dashboard
 - constant or custom text, eg: job name
 ```
 local varJob = grafana.template.custom(
-  'job',         // name
-  'prometheus',  // query
-  'prometheus',  // current
-  hide=true,
+  'job',            // name
+  'prometheus',     // query
+  'prometheus',     // current
+  hide=true,        // default = ''
+  multi=true,       // default = false
+  includeAll=true,  // default = false
 );
 
 dashboard
