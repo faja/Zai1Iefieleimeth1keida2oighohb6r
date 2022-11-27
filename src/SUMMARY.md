@@ -84,6 +84,9 @@
         - [chapter 4 - bcc](./LINUX_INTERNALS/BPF/ch4_bcc/index.md)
         - [chapter 5 - bpftrace](./LINUX_INTERNALS/BPF/ch5_bpftrace/index.md)
             - [bpftrace programming](./LINUX_INTERNALS/BPF/ch5_bpftrace/programming.md)
+    - [MEMORY](./LINUX_INTERNALS/MEMORY/index.md)
+        - [metrics](./LINUX_INTERNALS/MEMORY/METRICS_STATS_LIMITS/metrics.md)
+        - [limits](./LINUX_INTERNALS/MEMORY/METRICS_STATS_LIMITS/limits.md)
 
 ---
 - [AWS](./AWS/index.md)
