@@ -21,6 +21,15 @@ local panelLogs = {
 
   // options
   "options": {
+    // these are all defaults:
+    // "showTime": false,
+    // "showLabels": false,
+    // "showCommonLabels": false,
+    // "wrapLogMessage": false,
+    // "prettifyLogMessage": false,
+    // "enableLogDetails": true,
+    // "dedupStrategy": "none",
+    // "sortOrder": "Descending"
   }
 };
 ```
