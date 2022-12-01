@@ -4,6 +4,7 @@
 - [biosnoop command](./BIOSNOOP/index.md) `(tags=bpf,performance)`
 - [brew](./BREW/index.md) `(tags=mac,macos,macosx,package,manager)`
 - [cachestat command](./CACHESTAT/index.md) `(tags=bpf,performance)`
+- [date](./DATE/index.md)
 - [dmesg](./DMESG/index.md) `(tags=performance)`
 - [execsnoop command](./EXECSNOOP/index.md) `(tags=bpf,performance)`
 - [ext4slower command](./EXT4SLOWER/index.md) `(tags=bpf,performance)`

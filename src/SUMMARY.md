@@ -51,6 +51,7 @@
     - [biosnoop](./COMMANDS/BIOSNOOP/index.md)
     - [brew](./COMMANDS/BREW/index.md)
     - [cachestat](./COMMANDS/CACHESTAT/index.md)
+    - [date](./COMMANDS/DATE/index.md)
     - [dmesg](./COMMANDS/DMESG/index.md)
     - [execsnoop](./COMMANDS/EXECSNOOP/index.md)
     - [ext4slower](./COMMANDS/EXT4SLOWER/index.md)
