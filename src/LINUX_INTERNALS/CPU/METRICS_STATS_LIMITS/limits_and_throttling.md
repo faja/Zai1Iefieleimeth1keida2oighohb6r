@@ -52,3 +52,15 @@ throttled% = container_cpu_cfs_throttled_periods_total / container_cpu_cfs_perio
 # links
 - Dave Chiluk, Indeed ~> [https://www.youtube.com/watch?v=UE7QX98-kO0](https://www.youtube.com/watch?v=UE7QX98-kO0)
 - to limit or not to limit ~> [https://www.youtube.com/watch?v=KCFFZ_qfKXk](https://www.youtube.com/watch?v=KCFFZ_qfKXk)
+- disable limit -> [https://youtu.be/eBChCFD9hfs?t=1437](https://youtu.be/eBChCFD9hfs?t=1437)
+
+# kinda my recommendation
+
+Based on all my knowledge, documentation, youtube videos etc...
+
+My suggestion is:
+- memory
+    - same value request as limits
+- cpu
+    - requests yes
+    - do not use limits

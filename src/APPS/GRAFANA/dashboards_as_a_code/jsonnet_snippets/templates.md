@@ -62,3 +62,17 @@ local varCluster = std.mergePatch(
 dashboard
 .addTemplate(varCluster)
 ```
+
+- text field variable (with optional default
+```
+local varPod = std.mergePatch(
+  grafana.template.text(
+    'pod', // name
+  ),
+  {
+    "current": {
+      "value": "_name_of_the_pod_" // default
+    }
+  }
+);
+```
