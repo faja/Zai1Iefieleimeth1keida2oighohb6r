@@ -23,11 +23,11 @@
     ```
     cat > in.tpl -<<EOT
     {{ with secret "secret/data/config" }}
-    {{ range $k, $v := .Data.data.all }}
-    {{ $k }} = {{ $v | toJSON }}
+    {{ range \$k, \$v := .Data.data.all }}
+    {{ \$k }} = {{ \$v | toJSON }}
     {{ end }}
-    {{ range $k, $v := .Data.data.worker1 }}
-    {{ $k }} = {{ $v | toJSON }}
+    {{ range \$k, \$v := .Data.data.worker1 }}
+    {{ \$k }} = {{ \$v | toJSON }}
     {{ end }}
     {{ end }}
     EOT
