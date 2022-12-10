@@ -18,14 +18,6 @@ local varPrometheusDS = grafana.template.datasource(
   //regex='/prometheus/',
 );
 
-local varJob = grafana.template.custom(
-  'job',         // name
-  'prometheus',  // query
-  'prometheus',  // current
-  hide=true,
-);
-
-
 local varCluster = std.mergePatch(
   grafana.template.new(
     'cluster',                                         // name
@@ -683,7 +675,6 @@ local panelDiskFree = {
 
 dashboard
 .addTemplate(varPrometheusDS)
-.addTemplate(varJob)
 .addTemplate(varCluster)
 .addPanels(
   [

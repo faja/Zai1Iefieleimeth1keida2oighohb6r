@@ -1,12 +1,48 @@
 local grafana = import 'grafonnet/grafana.libsonnet';
 
+local dashboard = grafana.dashboard.new(
+  'Prometheus',
+  timezone='utc',
+  time_from='now-6h',
+  editable=false,
+);
+
+// {{{ dashboard variables/templates
+local varPrometheusDS = grafana.template.datasource(
+  'PROMETHEUS_DS',     // name
+  'prometheus',        // query
+  'prometheus',        // current
+  hide=true,           // ''      - disables hiding at all, everything is displayed
+                       // 'label' - hide the name of the variable, and the drop down is displayed
+                       // any other value - hides everything
+  //regex='/prometheus/',
+);
+
+local varLokiDS = grafana.template.datasource(
+  'LOKI_DS', // name
+  'loki',    // query
+  'loki',    // current
+  hide=true, // ''      - disables hiding at all, everything is displayed
+             // 'label' - hide the name of the variable, and the drop down is displayed
+             // any other value - hides everything
+  //regex='/loki/',
+);
+
+local varJob = grafana.template.custom(
+  'job',        // name
+  'prometheus', // query
+  'prometheus', // current
+  hide=true,
+);
+// }}}
+
+// {{{ panels
 // {{{ panels: top row
 // {{{ panel: Version
 local panelVersion = {
   // type, title and description
   "type": "stat",
   "title": "Version",
-  "description": "blabla",
 
   // datasource
   "datasource": {
@@ -17,21 +53,16 @@ local panelVersion = {
   // targets
   "targets": [
     {
-      "expr": "prometheus_build_info{job=\"$job\"}",
-      "instant": true,
-      "legendFormat": "{{ version }}"
+      "expr": "prometheus_build_info{job=\"${job}\"}",
+      "legendFormat": "{{ version }}",
+      "instant": true
     }
   ],
-
-  // filedConfig
-  "fieldConfig": {
-  },
 
   // options
   "options": {
     "textMode": "name",   // display text from label
     "colorMode": "none",  // disable color
-    "graphMode": "none",  // disable graphing values (for instant query it does not matter)
     "reduceOptions": {
       "calcs": [
         "lastNotNull"
@@ -41,21 +72,37 @@ local panelVersion = {
 };
 // }}}
 // {{{ panel: Go version
-local panelGoVersion = grafana.statPanel.new(
-  "Go version",
-  datasource='$PROMETHEUS_DS', 
-  colorMode='none',
-  graphMode='none',
-  textMode='name',
-  reducerFunction='lastNotNull',
-)
-.addTarget(
-  grafana.prometheus.target(
-    'prometheus_build_info{job=\"${job}\"}',
-    instant=true,
-    legendFormat='{{ goversion }}',
-  )
-);
+local panelGoVersion = {
+  // type, title and description
+  "type": "stat",
+  "title": "Go version",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "prometheus_build_info{job=\"${job}\"}",
+      "legendFormat": "{{ goversion }}",
+      "instant": true
+    }
+  ],
+
+  // options
+  "options": {
+    "textMode": "name",   // display text from label
+    "colorMode": "none",  // disable color
+    "reduceOptions": {
+      "calcs": [
+        "lastNotNull"
+      ]
+    }
+  }
+};
 // }}}
 // {{{ panel: Kapitan Bomba
 local kapitanBomba = grafana.text.new(
@@ -65,21 +112,42 @@ local kapitanBomba = grafana.text.new(
 );
 // }}}
 // {{{ panel: Uptime
-local panelUptime = grafana.statPanel.new(
-  "Uptime",
-  datasource='$PROMETHEUS_DS', 
-  colorMode='none',
-  graphMode='none',
-  textMode='auto',
-  unit='s',
-  reducerFunction='lastNotNull',
-)
-.addTarget(
-  grafana.prometheus.target(
-    'time() - process_start_time_seconds{job=\"${job}\"}',
-    instant=true,
-  )
-);
+local panelUptime = {
+  // type, title and description
+  "type": "stat",
+  "title": "Uptime",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "time() - process_start_time_seconds{job=\"${job}\"}",
+      "instant": true
+    }
+  ],
+
+  // filedConfig
+  "fieldConfig": {
+    "defaults": {
+      "unit": "s"
+    }
+  },
+
+  // options
+  "options": {
+    "colorMode": "none",  // disable color
+    "reduceOptions": {
+      "calcs": [
+        "lastNotNull"
+      ]
+    }
+  }
+};
 // }}}
 // {{{ panel: Scrapes / minute
 // grafonnet does not support time series panel yet :(
@@ -238,8 +306,8 @@ local panelStorageSize = {
   "fieldConfig": {
     "defaults": {
       "color": {
-        "fixedColor": "light-red",
-        "mode": "fixed"
+        "mode": "fixed",
+        "fixedColor": "light-red"
       },
       "unit": "bytes"
     }
@@ -257,28 +325,42 @@ local panelStorageSize = {
 };
 // }}}
 // {{{ panel: Jobs
-local panelJobs = grafana.statPanel.new(
-  "Jobs",
-  description='Number of configured uniq jobs.',
-  datasource='$PROMETHEUS_DS', 
-  colorMode='none',
-  graphMode='none',
-  textMode='auto',
-  reducerFunction='lastNotNull',
-)
-.addTarget(
-  grafana.prometheus.target(
-    'count(prometheus_sd_discovered_targets{job=\"$job\"})',
-    instant=true,
-  )
-);
+local panelJobs = {
+  // type, title and description
+  "type": "stat",
+  "title": "Jobs",
+  "description": "Number of configured uniq jobs.",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "count(prometheus_sd_discovered_targets{job=\"$job\"})",
+      "instant": true
+    }
+  ],
+
+  // options
+  "options": {
+    "colorMode": "none",  // disable color
+    "reduceOptions": {
+      "calcs": [
+        "lastNotNull"
+      ]
+    }
+  }
+};
 // }}}
 // {{{ panel: Retention
 local panelRetention = {
   // type, title and description
   "type": "stat",
   "title": "Retention",
-  "description": "blabla...",
 
   // datasource
   "datasource": {
@@ -304,7 +386,6 @@ local panelRetention = {
   // options
   "options": {
     "colorMode": "none",  // disable color
-    "graphMode": "none",  // disable graphing
     "reduceOptions": {
       "calcs": [
         "lastNotNull"
@@ -314,21 +395,36 @@ local panelRetention = {
 };
 // }}}
 // {{{ panel: Targets
-local panelTargets = grafana.statPanel.new(
-  'Targets',
-  description='In K8S this value is actually number of discovered targets, not scraped, so the value is bullshit.',
-  datasource='$PROMETHEUS_DS', 
-  colorMode='none',
-  graphMode='none',
-  textMode='auto',
-  reducerFunction='lastNotNull',
-)
-.addTarget(
-  grafana.prometheus.target(
-    'sum(prometheus_sd_discovered_targets{job=\"$job\"})',
-    instant=true,
-  )
-);
+local panelTargets = {
+  // type, title and description
+  "type": "stat",
+  "title": "Targets",
+  "description": "In K8S this value is actually number of discovered targets, not scraped, so the value is bullshit.",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "sum(prometheus_sd_discovered_targets{job=\"$job\"})",
+      "instant": true
+    }
+  ],
+
+  // options
+  "options": {
+    "colorMode": "none",  // disable color
+    "reduceOptions": {
+      "calcs": [
+        "lastNotNull"
+      ]
+    }
+  }
+};
 // }}}
 // }}}
 // {{{ panels: TSDB
@@ -2231,45 +2327,12 @@ local panelLogs = {
   }
 };
 // }}}
-
-// {{{ dashboard
-grafana.dashboard.new(
-  'Prometheus',
-  timezone='utc',
-  time_from='now-1h',
-  editable=true,
-)
-.addTemplate(
-  grafana.template.datasource(
-    'PROMETHEUS_DS',     // name
-    'prometheus',        // query
-    'prometheus',        // current
-    hide=true,           // ''      - disables hiding at all, everything is displayed
-                         // 'label' - hide the name of the variable, and the drop down is displayed
-                         // any other value - hides everything
-    //regex='/prometheus/',
-  )
-)
-.addTemplate(
-  grafana.template.datasource(
-    'LOKI_DS',           // name
-    'loki',              // query
-    'loki',              // current
-    hide=true,           // ''      - disables hiding at all, everything is displayed
-                         // 'label' - hide the name of the variable, and the drop down is displayed
-                         // any other value - hides everything
-    //regex='/loki/',
-  )
-)
-.addTemplate(
-  grafana.template.custom(
-    'job',         // name
-    'prometheus',  // query
-    'prometheus',  // current
-    hide=true,
-  )
-)
 // }}}
+
+dashboard
+.addTemplate(varPrometheusDS)
+.addTemplate(varLokiDS)
+.addTemplate(varJob)
 
 // {{{ top row
 .addPanels(
