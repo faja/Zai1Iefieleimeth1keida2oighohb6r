@@ -62,6 +62,7 @@
     - [iostat](./COMMANDS/IOSTAT/index.md)
     - [mpstat](./COMMANDS/MPSTAT/index.md)
     - [opensnoop](./COMMANDS/OPENSNOOP/index.md)
+    - [openssl](./COMMANDS/OPENSSL/index.md)
     - [pidstaT](./COMMANDS/PIDSTAT/index.md)
     - [profile](./COMMANDS/PROFILE/index.md)
     - [rsync](./COMMANDS/RSYNC/index.md)
