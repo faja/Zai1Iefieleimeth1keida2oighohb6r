@@ -52,6 +52,7 @@ local varCluster = std.mergePatch(
     'cluster',                                         // name
     {"type": "prometheus", "uid": "${PROMETHEUS_DS}"}, // datasource
     "label_values(rabbitmq_version_info, cluster)",    // query
+    current="clusterXYZ",                              // optional, if we wanna set "default" selection
   ),
   {
     "definition": "label_values(rabbitmq_version_info, cluster)"  // optional
