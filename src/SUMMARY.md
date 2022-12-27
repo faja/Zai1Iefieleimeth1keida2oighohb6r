@@ -22,6 +22,7 @@
                 - [panel text](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_text.md)
                 - [panel logs](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/panel_logs.md)
                 - [point of start](./APPS/GRAFANA/dashboards_as_a_code/jsonnet_snippets/point_of_start.md)
+    - [loki](./APPS/LOKI/index.md)
     - [nomad](./APPS/NOMAD/index.md)
         - [cheatsheet](./APPS/NOMAD/cheatsheet.md)
         - [main docs](./APPS/NOMAD/MAIN_DOCS/index.md)
