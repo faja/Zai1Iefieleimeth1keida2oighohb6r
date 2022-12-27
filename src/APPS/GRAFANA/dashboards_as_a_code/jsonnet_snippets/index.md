@@ -16,3 +16,8 @@ With such approach json is pretty small, and it is easy to change etc...
 - [panel table](./panel_table.md)
 - [panel text](./panel_text.md)
 - [panel logs](./panel_logs.md)
+
+---
+
+all you need to have as a point of start
+- [point_of_start](./point_of_start.md)

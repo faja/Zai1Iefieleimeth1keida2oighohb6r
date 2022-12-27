@@ -196,3 +196,58 @@ local panelJobsAvgDuration = {
   ]
 };
 ```
+
+- single stat, merge multiple values into one single stat, for instance for displaying a version
+```
+    local panelClusterVersion = {
+  // type, title and description
+  "type": "stat",
+  "title": "Cluster version",
+  "description": "Actually a `kubelet` version running on a node, selected by `Last*`.",
+
+  // datasource
+  "datasource": {
+    "type": "prometheus",
+    "uid": "${PROMETHEUS_DS}"
+  },
+
+  // targets
+  "targets": [
+    {
+      "expr": "kube_node_info",
+      "instant": true,
+      "legendFormat": "{{ kubelet_version }}"
+    }
+  ],
+
+  // filedConfig
+  "fieldConfig": {
+  },
+
+  // options
+  "options": {
+    "textMode": "name",   // display text from label
+    "colorMode": "none",  // disable color
+    "reduceOptions": {
+      "calcs": [
+        "lastNotNull"
+      ]
+    }
+  },
+
+  // transformations
+  "transformations": [
+    {
+      "id": "merge",
+      "options": {}
+    },
+    {
+      "id": "renameByRegex",
+      "options": {
+        "regex": "v([^-]+)-.+",
+        "renamePattern": "$1"
+      }
+    }
+  ]
+};
+```
