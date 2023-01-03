@@ -77,6 +77,7 @@
     - [trace](./COMMANDS/TRACE/index.md)
     - [uptime](./COMMANDS/UPTIME/index.md)
     - [vmstat](./COMMANDS/VMSTAT/index.md)
+    - [yj](./COMMANDS/YJ/index.md)
 
 ---
 

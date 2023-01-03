@@ -28,6 +28,7 @@
 - [trace](./TRACE/index.md) `(tags=bpf,bcc,performance)`
 - [uptime](./UPTIME/index.md) `(tags=performance)`
 - [vmstat](./VMSTAT/index.md) `(tags=performance)`
+- [yj](./YJ/index.md) `(tags=hcl,json,yaml,convert)`
 
 ---
 Performance analysis
